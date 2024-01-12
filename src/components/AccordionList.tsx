@@ -22,7 +22,7 @@ import {
 const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index}) => { 
   return (
       <AccordionItem
-        key={"accordion-item-" + item.id}
+        key={item._uid}
         value={`item-${index + 1}`}
       >
         <AccordionTrigger>
@@ -55,8 +55,8 @@ const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index})
 
       return (
         <Accordion type="multiple" value={openItems} onValueChange={handleValueChange} className="w-full">
-          {items?.map((item:TextSectionStoryblok, idx:number) => { return (
-					<AccordionListItem item={item} listLength={items.length} index={idx} />
+          {items && items?.map((item:TextSectionStoryblok, idx:number) => { return (
+					<AccordionListItem item={item} listLength={items.length} index={idx} key={item._uid} />
 			    )})} 
         </Accordion>
       )
