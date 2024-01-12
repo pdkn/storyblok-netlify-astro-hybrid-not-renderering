@@ -1,0 +1,15 @@
+---
+//export const prerender = false;
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import { AccordionList } from './../AccordionList';
+import type { ListStoryblok } from '../../component-types-sb';
+
+const { blok } = Astro.props as ListStoryblok;
+
+---
+
+<div {...storyblokEditable(blok)}>
+	<!-- <p>{JSON.stringify(items)}</p> -->
+	<div class="w-10/12 lg:w-7/12 mx-auto mb-8"><AccordionList items={blok.items} client:visible /></div>
+</div>
