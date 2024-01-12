@@ -1,13 +1,14 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import type { GridSectionStoryblok, GridCardStoryblok } from './../../component-types-sb';
 
-const { blok } = Astro.props
+const { blok } = Astro.props as GridSectionStoryblok
 console.log("Grid Cards", blok)
 ---
 
 <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3" {...storyblokEditable(blok)}>
-  {blok.cards?.map((nestedBlok) => (
+  {blok.cards?.map((nestedBlok:GridCardStoryblok) => (
     <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
   ))}
 </div>

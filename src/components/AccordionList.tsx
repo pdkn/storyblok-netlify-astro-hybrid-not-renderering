@@ -24,7 +24,6 @@ const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index})
       <AccordionItem
         key={"accordion-item-" + item.id}
         value={`item-${index + 1}`}
-        border={index !== listLength - 1}
       >
         <AccordionTrigger>
         <span className="flex flex-row items-center gap-2 text-base md:text-2xl">
