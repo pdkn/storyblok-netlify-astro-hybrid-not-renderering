@@ -19,8 +19,8 @@ import {
     index: number;
   };
 
-const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index}) => {
-    return (
+const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index}) => { 
+  return (
       <AccordionItem
         key={"accordion-item-" + item.id}
         value={`item-${index + 1}`}
@@ -35,7 +35,8 @@ const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index})
           <span className="flex justify-start">
             <div
               className="md:pl-8 text-base/[22px] text-grey md:max-w-[640px]  md:text-xl/7"
-            ><RichTextRenderer richtext={item.text} /></div>
+            >
+              {item && item.text && <RichTextRenderer richtext={item.text} />}</div>
           </span>
         </AccordionContent>
       </AccordionItem>
