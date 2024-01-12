@@ -1,0 +1,15 @@
+[build]
+command = "npm run build"
+publish = "dist"
+base = "./"
+package = ""
+functions = "netlify/functions"
+
+[dev]
+port = 8888        # The port Netlify Dev will run on
+targetPort = 4321  # The port of your actual site generator/server
+# autoLaunch = true  # Automatically opens your browser
+command = "npm run dev"
+base = "./"
+package = ""
+functions = "netlify/functions"
