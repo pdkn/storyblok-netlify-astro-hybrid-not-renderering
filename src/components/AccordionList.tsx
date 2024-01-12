@@ -45,14 +45,14 @@ const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index})
   export const AccordionList:FC<AccordionListProps> = ({items = [] }) => {
     //console.log("AccordionList items", items)
 
-    // Assuming you have three items in the accordion
-    const [openItems, setOpenItems] = useState(items.map((item, idx)=> `item-${idx + 1}`));
+    if ( items && items.length ) {
+      // Assuming you have three items in the accordion
+      const [openItems, setOpenItems] = useState(items.map((item, idx)=> `item-${idx + 1}`));
 
-    const handleValueChange = (value:string[]) => {
-      setOpenItems(value);
-    };
+      const handleValueChange = (value:string[]) => {
+        setOpenItems(value);
+      };
 
-    if ( items.length ) {
       return (
         <Accordion type="multiple" value={openItems} onValueChange={handleValueChange} className="w-full">
           {items?.map((item:TextSectionStoryblok, idx:number) => { return (
