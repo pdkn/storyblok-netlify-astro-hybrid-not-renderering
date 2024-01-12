@@ -55,7 +55,7 @@ const AccordionListItem:FC<AccordionListItemProps> = ({item, listLength, index})
     if ( items.length ) {
       return (
         <Accordion type="multiple" value={openItems} onValueChange={handleValueChange} className="w-full">
-          {items?.map((item:ListItemStoryblok, idx:number) => { return (
+          {items?.map((item:TextSectionStoryblok, idx:number) => { return (
 					<AccordionListItem item={item} listLength={items.length} index={idx} />
 			    )})} 
         </Accordion>
